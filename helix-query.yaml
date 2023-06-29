@@ -1,12 +1,13 @@
+
 version: 1
 
 indices:
   def: &def
     include:
-      - '/blog/**'
+      - '/food/**'
     exclude:
-      - '/blog/drafts/**'
-    target: /blog/query-index.xlsx
+      - '/food/drafts/**'
+    target: /food/query-index.xlsx
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -24,10 +25,10 @@ indices:
         select: none
         value: parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
 
- it:
+  it:
     <<: *def
     include:
-      - '/it/blog/**'
+      - '/it/food/**'
     exclude:
-      - '/it/blog/drafts/**'
-    target: /it/blog/query-index.xlsx
+      - '/it/food/drafts/**'
+    target: /it/food/query-index.xlsx
